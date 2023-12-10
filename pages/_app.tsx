@@ -11,10 +11,11 @@ const activeChain = 'mumbai';
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThirdwebProvider activeChain={activeChain}>
-      clientId={process.env.NEXT_PUBLIC_TEMPLATE_CLIENT_ID}
-      activeChain={activeChain}
+      client ID = {process.env.NEXT_PUBLIC_TEMPLATE_CLIENT_ID}
+      <br />
+      activeChain = mumbai
       <Head>
-        <title>thirdweb Token Drop Example</title>
+        <title>thirdweb Token Drop For Security.com</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
           name="description"

@@ -11,6 +11,7 @@ import {
 } from '@thirdweb-dev/react';
 import { BigNumber, utils } from 'ethers';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useMemo, useState } from 'react';
 import styles from '../styles/Home.module.css';
 import { parseIneligibility } from '../utils/parseIneligibility';
@@ -212,18 +213,19 @@ const Home = () => {
           activeClaimCondition.data.startTime > new Date() && (
             <p>Drop is starting soon. Please check back later.</p>
           ))}
-
       {claimConditions.data?.length === 0 ||
         (claimConditions.data?.every((cc) => cc.maxClaimableSupply === '0') && (
           <p>
             This drop is not ready to be minted yet. (No claim condition set)
           </p>
         ))}
-
       {isLoading ? (
         <p>Loading...</p>
       ) : (
         <>
+          <p style={{ fontSize: '25px' }}>
+            AI챗봇 보안이를 사용하기 위한 블록체인 토큰 발급 페이지 입니다.
+          </p>
           {contractMetadata?.image && (
             <Image
               src={contractMetadata?.image}
@@ -233,7 +235,6 @@ const Home = () => {
               style={{ objectFit: 'contain' }}
             />
           )}
-
           <h2 className={styles.title}>Claim Tokens</h2>
           <p className={styles.explain}>
             Claim ERC20 tokens from{' '}
@@ -241,12 +242,8 @@ const Home = () => {
           </p>
         </>
       )}
-
-      <div>
-        Token Contract Address: 0x288844E4013f07724b2f118F62F272f080b8fc19
-      </div>
+      <div>Token Contract Address: {tokenAddress}</div>
       <hr className={styles.divider} />
-
       <div className={styles.claimGrid}>
         <input
           type="number"
@@ -274,6 +271,12 @@ const Home = () => {
           {buttonText}
         </Web3Button>
       </div>
+      <br />
+      <br />
+      <br />
+      <Link href="http://localhost:3000/dashboard">
+        <button className={styles.returnButton}>&#x21A9; 돌아가기</button>
+      </Link>
     </div>
   );
 };

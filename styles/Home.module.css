@@ -115,6 +115,25 @@
   padding: 16px;
 }
 
+.returnButton {
+  display: inline-block;
+  padding: 10px 20px;
+  background: linear-gradient(to right, #8e44ad, #3498db);
+  color: white;
+  text-decoration: none;
+  border-radius: 20px;
+  border: none;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  outline: none;
+}
+
+.returnButton:hover {
+  background: linear-gradient(to right, #3498db, #8e44ad);
+  border: 2px solid #8e44ad;
+}
+
 /* On mobile: */
 @media only screen and (max-width: 850px) {
   .claimGrid {
